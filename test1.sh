@@ -1,5 +1,7 @@
 #!/bin/sh
 
+chmod +x -- "$0"
+
 jemaltest(){
   echo "Test is passed for Jemal"
 }
