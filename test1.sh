@@ -1,6 +1,6 @@
 #!/bin/sh
 
-jemaltest(){
+jemal(){
   echo "Test is passed for Jemal"
 }
 
@@ -9,14 +9,26 @@ fer(){
   echo "Test is passed for Feruz"
 }
 
+ehan(){
+  echo "Test is passed for Ehan"
+}
+
 for arg in "$@"
 do
-  if [ "$#" -eq 1 ] && [ "$arg" == "jemal" ]
+  if [ "$#" -eq 1 ] || [ "$#" -eq 2 ] || [ "$#" -eq 3 ] && [ "$arg" == "jemal" ]
   then
-    #echo "Test is  passed for jemal"
-  jemaltest
-  elif [ "$#" -eq 2 ] && [ "$arg" == "Feruz" ]
+  jemal
+  exit 0
+  elif [ "$#" -eq 1 ] || [ "$#" -eq 2 ] || [ "$#" -eq 3 ] && [ "$arg" == "feruz" ]
   then
   fer
+  exit 0
+  elif [ "$#" -eq 1 ] || [ "$#" -eq 3 ] || [ "$#" -eq 2 ] && [ "$arg" == "ehan" ]
+  then
+  ehan
+  exit 0
+  else
+    echo "you are not a member of Fruz's Family"
+  exit 0
   fi
 done
